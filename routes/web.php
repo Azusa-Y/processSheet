@@ -20,4 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin'], function(){
     Route::get('processSheet/create','Admin\ProcessSheetController@add')->middleware('auth');
+    Route::post('processSheet/create', 'Admin\ProcessSheetController@create');
 });

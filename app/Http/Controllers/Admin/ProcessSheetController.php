@@ -12,4 +12,9 @@ class ProcessSheetController extends Controller
     {
         return view('admin.processSheet.create');
     }
+    
+    public function create(Request $request)
+    {
+        return redirect('admin/processSheet/create');
+  }  
 }
