@@ -14,21 +14,39 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2">工種</label>
+                        <label class="col-md-2" for="work_type">工種</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="worktype" value="{{ old('worktype') }}">
+                            <input type="text" class="form-control" name="work_type" value="{{ old('work_type') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">種別</label>
+                        <label class="col-md-2" for="category">種別</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="category" value="{{ old('category') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">規格</label>
+                        <label class="col-md-2" for="norm">規格</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="norm" value="{{ old('norm') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="workload">日当り作業量</label>
+                        <div class="col-md-10">
+                            <input type="number" class="form-control" name="workload" value="{{ old('workload') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="unit">単位</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="unit" value="{{ old('unit') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="quantity">数量</label>
+                        <div class="col-md-10">
+                            <input type="number" class="form-control" name="quantity" value="{{ old('quantity') }}">
                         </div>
                     </div>
                     {{ csrf_field() }}

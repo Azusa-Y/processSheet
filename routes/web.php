@@ -18,7 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['prefix' => 'admin'], function(){
-    Route::get('processSheet/create','Admin\ProcessSheetController@add')->middleware('auth');
+Route::group(['prefix' => 'admin', 'middleware' =>'auth'], function() {
+    Route::get('processSheet/create','Admin\ProcessSheetController@add');
     Route::post('processSheet/create', 'Admin\ProcessSheetController@create');
+    Route::get('construction/create','Admin\ConstructionController@add');
+    Route::post('construction/create', 'Admin\ConstructionController@create');
 });
