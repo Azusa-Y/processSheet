@@ -7,18 +7,15 @@
             <div class="row">
                 <div class="headline col-md-10 mx-auto">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <div class="caption mx-auto">
                                 <div class="title p-2">
-                                    <h1>{{ str_limit($headline->work_type, 100) }}</h1>
+                                    <h1>{{ str_limit($headline->construction_name, 70) }}</h1>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <p class="body mx-auto">{{ str_limit($headline->category, 100) }}</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p class="body mx-auto">{{ str_limit($headline->norm, 100) }}</p>
+                        <div class="col-md-6">
+                            <p class="body mx-auto">{{ str_limit($headline->construction_place, 70) }}</p>
                         </div>
                     </div>
                 </div>
@@ -35,13 +32,10 @@
                                     {{ $post->updated_at->format('Y年m月d日') }}
                                 </div>
                                 <div class="title">
-                                    {{ str_limit($post->work_type, 150) }}
+                                    {{ str_limit($post->construction_name, 150) }}
                                 </div>
                                 <div class="body mt-3">
-                                    {{ str_limit($post->category, 150) }}
-                                </div>
-                                <div class="body mt-3">
-                                    {{ str_limit($post->norm, 150) }}
+                                    {{ str_limit($post->construction_place, 150) }}
                                 </div>
                             </div>
                         </div>

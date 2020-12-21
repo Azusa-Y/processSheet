@@ -10,6 +10,7 @@ class ProcessSheet extends Model
     
     //
     public static $rules = array(
+        'constructions_id' => 'required',
         'work_type' => 'required',
         'category' => 'required',
         'norm' => 'required',
@@ -18,10 +19,5 @@ class ProcessSheet extends Model
         'quantity' => 'required',
     );
     
-    // Constructionモデルに関連付けを行う
-    public function histories()
-    {
-      return $this->hasMany('App\Construction');
 
-    }
 }

@@ -16,4 +16,11 @@ class Construction extends Model
         'construction_end_period' => 'required',
         'ordering_party' => 'required',
     );
+    
+        // Constructionモデルに関連付けを行う
+    public function processsheets()
+    {
+      return $this->hasMany('App\ProcessSheet');
+
+    }
 }

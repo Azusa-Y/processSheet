@@ -23,4 +23,6 @@ Route::group(['prefix' => 'admin', 'middleware' =>'auth'], function() {
     Route::post('processSheet/create', 'Admin\ProcessSheetController@create');
     Route::get('construction/create','Admin\ConstructionController@add');
     Route::post('construction/create', 'Admin\ConstructionController@create');
+    Route::get('construction', 'Admin\ConstructionController@index');
+    Route::get('/', 'ConstructionController@index');
 });
