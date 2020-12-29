@@ -25,11 +25,8 @@
                 </form>
             </div>
         </div>
-        <div class="container">
-            <div class="right-contents">
-                <a href="{{ action('Admin\ProcessSheetController@add') }}" role="button" class="btn btn-primary">工程追加</a>
-            </div>
-            <div class="left-contents">
+        <div class="row">
+            <div class="list-construction col-md-12 mx-auto">
                 <div class="row">
                     <table class="table table-striped">
                         <thead>
@@ -40,6 +37,8 @@
                                 <th width="20%">工期初日</th>
                                 <th width="20%">工期最終日</th>
                                 <th width="20%">発注者</th>
+                                <th width="20%">工程追加</th>
+                                <th width="20%">工程一覧</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,6 +50,16 @@
                                     <td>{{ \Str::limit($construction->construction_start_period, 100) }}</td>
                                     <td>{{ \Str::limit($construction->construction_end_period, 100) }}</td>
                                     <td>{{ \Str::limit($construction->ordering_party, 100) }}</td>
+                                    <td>
+                                        <div class="row">
+                                            <a href="{{ action('Admin\ProcessSheetController@add', ['id' => $construction->id]) }}" role="button" class="btn btn-primary">工程追加</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <a href="{{ action('Admin\ProcessSheetController@index', ['id' => $construction->id]) }}" role="button" class="btn btn-primary">工程追加</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

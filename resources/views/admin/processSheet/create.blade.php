@@ -13,11 +13,7 @@
                             @endforeach
                         </ul>
                     @endif
-                    <div class="form-group row">
-                        <div class="col-md-10">
-                            <input type="hidden" name="constructions_id" value="{{ old('constructions_id') }}">
-                        </div>
-                    </div>
+                            <input type="hidden" name="constructions_id" value="{{ $construction_id}}">
                     <div class="form-group row">
                         <label class="col-md-2" for="work_type">工種</label>
                         <div class="col-md-10">
@@ -55,7 +51,7 @@
                         </div>
                     </div>
                     {{ csrf_field() }}
-                    <input type="submit" class="btn btn-primary" value="更新">
+                    <input type="submit" class="btn btn-primary" value="追加">
                 </form>
             </div>
         </div>

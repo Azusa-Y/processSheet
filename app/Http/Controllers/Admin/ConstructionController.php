@@ -32,7 +32,7 @@ class ConstructionController extends Controller
         $construction->fill($form);
         $construction->save();
         
-        return redirect('admin/construction/create');
+        return redirect('admin/construction');
         
     }
     

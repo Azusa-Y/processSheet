@@ -10,9 +10,9 @@ use App\ProcessSheet;
 class ProcessSheetController extends Controller
 {
     //
-    public function add()
+    public function add(Request $request)
     {
-        return view('admin.processSheet.create');
+        return view('admin.processSheet.create', ['construction_id' => $request->id]);
     }
     
     public function create(Request $request)
@@ -30,7 +30,7 @@ class ProcessSheetController extends Controller
         $processSheet->fill($form);
         $processSheet->save();
         
-        return redirect('admin/processSheet/create');
+        return redirect('admin/construction');
     }
     
     public function edit(Request $request)
@@ -60,5 +60,10 @@ class ProcessSheetController extends Controller
 
       return redirect('admin/processSheet');
         
+    }
+
+    public function index(Request $request)
+    {
+        return view('admin.processSheet.index', ['construction_id' => $request->id]);
     }
 }

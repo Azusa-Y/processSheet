@@ -13,7 +13,7 @@ class CreateProcesssheetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('processsheets', function (Blueprint $table) {
+        Schema::create('process_sheets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('constructions_id');
             $table->string('work_type');
