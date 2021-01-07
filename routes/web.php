@@ -25,5 +25,6 @@ Route::group(['prefix' => 'admin', 'middleware' =>'auth'], function() {
     Route::post('construction/create', 'Admin\ConstructionController@create');
     Route::get('construction', 'Admin\ConstructionController@index');
     Route::get('processSheet/index', 'Admin\ProcessSheetController@index');
+    Route::get('process/index', 'Admin\ProcessController@index');
     Route::get('/', 'ConstructionController@index');
 });

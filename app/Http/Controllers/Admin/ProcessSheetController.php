@@ -64,6 +64,7 @@ class ProcessSheetController extends Controller
 
     public function index(Request $request)
     {
-        return view('admin.processSheet.index', ['construction_id' => $request->id]);
+      $posts = ProcessSheet::where('constructions_id', $request->id)->get();
+      return view('admin.processSheet.index', ['posts' => $posts]);
     }
 }

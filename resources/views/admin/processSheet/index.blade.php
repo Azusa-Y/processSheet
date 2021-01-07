@@ -10,9 +10,14 @@
             <div class="col-md-4">
                 <a href="{{ action('Admin\ProcessSheetController@add') }}" role="button" class="btn btn-primary">追加</a>
             </div>
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-2">
+                <a href="{{ action('Admin\ProcessController@index') }}" role="button" class="btn btn-primary">工程表追加</a>
+            </div>
         </div>
         <div class="row">
-            <div class="list-construction col-md-12 mx-auto">
+            <div class="list-ProcessSheet col-md-12 mx-auto">
                 <div class="row">
                     <table class="table table-striped">
                         <thead>
@@ -21,9 +26,9 @@
                                 <th width="20%">種別</th>
                                 <th width="20%">規格</th>
                                 <th width="20%">日当り作業量</th>
-                                <th width="20%">単位</th>
-                                <th width="20%">数量</th>
-                                <th width="20%">日数</th>
+                                <th width="10%">単位</th>
+                                <th width="10%">数量</th>
+                                <th width="10%">日数</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,15 +37,15 @@
                                     <td>{{ \Str::limit($processSheet->work_type, 100) }}</td>
                                     <td>{{ \Str::limit($processSheet->category, 100) }}</td>
                                     <td>{{ \Str::limit($processSheet->norm, 100) }}</td>
-                                    <td>{{ \Str::limit($processSheet->worklord, 100) }}</td>
+                                    <td>{{ \Str::limit($processSheet->workload, 100) }}</td>
                                     <td>{{ \Str::limit($processSheet->unit, 100) }}</td>
                                     <td>{{ \Str::limit($processSheet->quantity, 100) }}</td>
-                                    <?php
-                                    $workload=(Str::limit($processSheet->worklord));
-                                    $quantity=(Str::limit($processSheet->quantity));
-                                    $days=$workload/$quantity;
-                                    ?>
-                                    <td>{{<?php echo $days;?>, 100) }}</td>
+                                    <td><?php
+                                        if($processSheet->workload != 0){
+                                        $day =round($processSheet->quantity)/($processSheet->workload);
+                                        }
+                                        echo $day;
+                                        ?></td>
                                 </tr>
                             @endforeach
                         </tbody>
