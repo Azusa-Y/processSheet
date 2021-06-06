@@ -13,8 +13,11 @@
             <div class="col-md-6">
             </div>
             <div class="col-md-2">
-                <a href="{{ action('Admin\ProcessController@index') }}" role="button" class="btn btn-primary">工程表追加</a>
+                <a href="{{ action('Admin\ProcessController@index', ['id' => $id]) }}" role="button" class="btn btn-primary">工程表表示</a>
             </div>
+        </div>
+        <div class="row">
+                <p>合計日数{{$days}}</p>
         </div>
         <div class="row">
             <div class="list-ProcessSheet col-md-12 mx-auto">
@@ -42,7 +45,7 @@
                                     <td>{{ \Str::limit($processSheet->quantity, 100) }}</td>
                                     <td><?php
                                         if($processSheet->workload != 0){
-                                        $day =round($processSheet->quantity)/($processSheet->workload);
+                                        $day =ceil(($processSheet->quantity)/($processSheet->workload));
                                         }
                                         echo $day;
                                         ?></td>

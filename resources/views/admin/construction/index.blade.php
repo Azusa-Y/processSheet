@@ -57,7 +57,7 @@
                                     </td>
                                     <td>
                                         <div class="row">
-                                            <a href="{{ action('Admin\ProcessSheetController@index', ['id' => $construction->id]) }}" role="button" class="btn btn-primary">工程追加</a>
+                                            <a href="{{ action('Admin\ProcessSheetController@index', ['id' => $construction->id]) }}" role="button" class="btn btn-primary">工程一覧</a>
                                         </div>
                                     </td>
                                 </tr>

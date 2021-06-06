@@ -65,6 +65,13 @@ class ProcessSheetController extends Controller
     public function index(Request $request)
     {
       $posts = ProcessSheet::where('constructions_id', $request->id)->get();
-      return view('admin.processSheet.index', ['posts' => $posts]);
+      $days = 0;
+      foreach($posts as $processSheet){
+      if($processSheet->workload != 0){
+        $days +=ceil(($processSheet->quantity)/($processSheet->workload));
+      }
+      }
+
+      return view('admin.processSheet.index', ['posts' => $posts ,'days' => $days ,'id' =>$request->id]);
     }
 }
